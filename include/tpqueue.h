@@ -68,13 +68,13 @@ void TPQueue::push(const SYM& data) {
     else {
         ITEM* current = head;
         while (current->next && data.prior <= current->next->data.prior) {
-            // Проходим по очереди, пока не найдем элемент, у которого приоритет меньше нового элемента
+           
             current = current->next;
         }
         newItem->next = current->next;
         current->next = newItem;
         if (current == tail) {
-            // Если текущий элемент - это хвост, обновляем хвост
+            
             tail = newItem;
         }
     }
